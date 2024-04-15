@@ -1,6 +1,6 @@
 import React from "react";
 
-import { createContact } from "../../utils/index";
+import { createContact, contactIsExist } from "../../utils/index";
 
 export class ContactForm extends React.Component {
   state = {
@@ -18,7 +18,12 @@ export class ContactForm extends React.Component {
     e.preventDefault();
 
     const { name, number } = this.state;
-    const { addContact } = this.props;
+    const { addContact, contacts } = this.props;
+
+    if (contactIsExist(contacts, name)) {
+      this.resetForm();
+      return;
+    }
 
     addContact(createContact(name, number));
 

@@ -33,7 +33,7 @@ export class App extends React.Component {
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm addContact={this.addContact} />
+        <ContactForm contacts={contacts} addContact={this.addContact} />
 
         <h2>Contacts</h2>
         <Filter filterValue={filter} searchValue={this.getContact} />
