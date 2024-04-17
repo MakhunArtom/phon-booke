@@ -4,7 +4,7 @@ export const Contact = ({ id, name, number, deletContact }) => {
       <p>{name}</p>
       <p>{number}</p>
 
-      <button type="button" onClick={(e) => deletContact(id)}>
+      <button type="button" onClick={() => deletContact(id)}>
         delet
       </button>
     </li>
